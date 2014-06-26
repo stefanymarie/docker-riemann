@@ -32,5 +32,5 @@ EXPOSE 5555 5555/udp 5556
 USER riemann
 VOLUME ["/etc/riemann"]
 
-CMD ["/etc/riemann/riemann.config"]
-ENTRYPOINT ["/usr/bin/riemann"]
+CMD ["/usr/bin/riemann /etc/riemann/riemann.config"]
+#ENTRYPOINT ["/usr/bin/riemann"]
