@@ -29,8 +29,10 @@ RUN wget -q http://aphyr.com/riemann/riemann_0.2.4_all.deb
 RUN dpkg -i riemann_0.2.4_all.deb
 
 EXPOSE 5555 5555/udp 5556
-USER riemann
+#USER riemann
 VOLUME ["/etc/riemann"]
 
-CMD ["/usr/bin/riemann /etc/riemann/riemann.config"]
+ADD run /usr/local/bin/run
+RUN chmod +x /usr/local/bin/run
+CMD ["/usr/local/bin/run"]
 #ENTRYPOINT ["/usr/bin/riemann"]
