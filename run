@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/riemann /etc/riemann/riemann.config
+/usr/bin/riemann -Xmx1248m /etc/riemann/riemann.config
